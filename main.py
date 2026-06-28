@@ -1,5 +1,7 @@
-from functions import add_task, view_tasks, delete_task
-import 
+
+#from functions import add_task, view_tasks, delete_task
+#functions.py is for the first iteration without classes
+from ToDoClass import TaskList, Task, activeTaskList, completedTaskList
 
 
 
@@ -14,16 +16,17 @@ def main():
         choice = input("Enter your choice (1-4): ")
 
         if choice == "1":
-            add_task()
+            task_name = input("Enter the task name: ")
+            activeTaskList.add_task(task_name)
         elif choice == "2":
-            view_tasks()
+            TaskList.view_tasks()
         elif choice == "3":
-            delete_task()
+            TaskList.delete_task()
         elif choice == "4":
             print("Exiting the app. Goodbye!")
             break
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == main:
+if __name__ == "__main__":
     main()
