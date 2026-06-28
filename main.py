@@ -1,4 +1,5 @@
-from functions import view_tasks, delete_task, add_task 
+from functions import add_task, view_tasks, delete_task
+import 
 
 
 
@@ -24,5 +25,5 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == "__main__":
+if __name__ == main:
     main()

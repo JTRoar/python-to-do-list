@@ -1,6 +1,6 @@
 
 
-#create the task list. We'll use a dict
+#create the task list. We'll use a dict for now, class better long term
 #we'll use a number as the key and the task name as the value
 TASK_LIST = {
     1: "Task 1",
@@ -41,3 +41,5 @@ def add_task():
         print(f"Task '{task_name}' added as Task {new_task_number}.")
     else:
         print("Task name cannot be empty.")
+
+
