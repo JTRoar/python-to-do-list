@@ -1,9 +1,14 @@
 
 #from functions import add_task, view_tasks, delete_task
 #functions.py is for the first iteration without classes
-from ToDoClass import TaskList, Task, activeTaskList, completedTaskList
+from ToDoClass import TaskList, Task
 
+""" Create two TaskList Objects
+One to track completed tasks. active
+will track all others. """
 
+completedTaskList = TaskList()
+activeTaskList = TaskList()
 
 def main():
     while True:
@@ -17,9 +22,15 @@ def main():
 
         if choice == "1":
             task_name = input("Enter the task name: ")
-            activeTaskList.add_task(task_name)
+            
+            if task_name:
+                activeTaskList.add_task(task_name)
+            else:
+                print("Task name cannot be empty.")
+        
         elif choice == "2":
-            TaskList.view_tasks()
+            activeTaskList.view_tasks()
+        
         elif choice == "3":
             TaskList.delete_task()
         elif choice == "4":

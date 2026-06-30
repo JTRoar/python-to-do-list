@@ -17,7 +17,12 @@ class TaskList:
 
     
     def view_tasks(self):
-        pass
+        if self.tasks:
+            print("Tasks:\n")
+            for key, value in self.tasks.items(): 
+                print(f"{key}. {value}\n")
+        else:
+            print("No active tasks.\n")
 
     def delete_task(self, task_id):
         pass
@@ -46,5 +51,3 @@ class TaskList:
     def mark_task_complete(self, task_id):
         pass 
 
-completedTaskList = TaskList()
-activeTaskList = TaskList()
