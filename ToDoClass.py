@@ -20,12 +20,14 @@ class TaskList:
         if self.tasks:
             print("Tasks:\n")
             for key, value in self.tasks.items(): 
-                print(f"{key}. {value}\n")
+                print(f"{key}. {value}")
         else:
             print("No active tasks.\n")
 
     def delete_task(self, task_id):
-        pass
+        if task_id in self.tasks:
+            del self.tasks[task_id]
+            print(f"Task {task_id} deleted. \n")
 
     def add_task(self, title):
         """Add a new task to the task list.
@@ -36,7 +38,7 @@ class TaskList:
         #create new task object
         #pass placeholders for anything we intend to change 
         #in this function, i.e. name and id
-        new_task = Task(0, title)
+        new_task = Task(0, title) 
                
         
         #set the task_id for our new_task object

@@ -32,7 +32,14 @@ def main():
             activeTaskList.view_tasks()
         
         elif choice == "3":
-            TaskList.delete_task()
+            task_to_delete = input("Enter task id to delete: \n")
+            if task_to_delete.isdigit():
+                task_to_delete = int(task_to_delete)
+                if task_to_delete in activeTaskList.tasks:
+                    activeTaskList.delete_task(task_to_delete)
+                else:
+                    print("Invalid task id.\n")
+            
         elif choice == "4":
             print("Exiting the app. Goodbye!")
             break
